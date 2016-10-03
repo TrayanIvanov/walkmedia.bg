@@ -17,6 +17,7 @@
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fresco/fresco.css" rel="stylesheet">
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="css/assets/ie10-viewport-bug-workaround.css" rel="stylesheet">

@@ -38,6 +38,16 @@ h1, h2, h3, h4 {
     margin-bottom: 30px;
 }
 
+.index-faq #gallery-btn {
+    background-color: #145968;
+}
+
+/*=========================================== */
+
+.gallery img {
+    margin-bottom: 20px;
+}
+
 /*=========================================== */
 
 .contact-form .btn {
@@ -46,4 +56,10 @@ h1, h2, h3, h4 {
 }
 .contact-form .btn:hover {
     background-color: #46b8da;
+}
+
+/*=========================================== */
+
+.footer {
+    margin-top: 30px;
 }
