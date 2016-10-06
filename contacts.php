@@ -5,6 +5,39 @@
     
     include_once("includes/head.php");
     include_once("includes/header.php");
+    include_once("includes/functions.php");
+
+    $message = '';
+    if (isset($_POST['send'])) {
+        if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['message']) && !empty($_POST['message'])) {
+            if (isValidEmail($_POST['email'])) {
+
+                $message = "
+                    Имате ново запитване от контактната форма на Walk Media<br /><br />
+                    <strong>Име:</strong> ".stripslashes($_POST['name'])."<br />
+                    <strong>Е-поща:</strong> ".stripslashes($_POST['email'])."<br />
+                    <strong>Съобщение:</strong> ".stripslashes(nl2br($_POST['message']))."<br />
+                ";
+
+                $headers  = "MIME-Version: 1.0\r\n";
+                $headers .= "Content-type: text/html; charset=utf-8\r\n";
+
+                $headers .= "From: Walk_Media \r\n";
+                $headers .= "Reply-To: ".$_POST['email']." \r\n";
+                $headers .= "Bcc: trayan.ivanov@gmail.com \r\n";
+
+                $to = "trayan.ivanov@gmail.com";
+                mail($to, "Запитване от контактна форма", $message, $headers);
+
+                unset($_POST);
+                $message = 'Съобщението е изпратено успешно';
+            } else {
+                $message = 'Невалидна е-поща';
+            }
+        } else {
+            $message = 'Всички полета са задължителни';
+        }
+    }
 ?>
 
 <div class="row">
@@ -18,7 +51,7 @@
     </div>
 
     <div class="col-lg-12 contact-form">
-        <form method="post" action="">
+        <form method="post" action="contacts.php">
             <div class="form-group">
                 <input type="text" name="name" value="" placeholder="Име" class="form-control">
             </div>
@@ -32,8 +65,9 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-lg btn-block">Изпратете</button>
+                <input type="submit" name="send" value="Изпратете" class="btn btn-lg btn-block">
             </div>
+            <p><?=$message?></p>
         </form>
     </div>
 </div>
