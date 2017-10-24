@@ -2,7 +2,7 @@
     $SeoTitle = "Контакти - Walk Media";
     $SeoDescription = "Ходеща реклама - Реклама за вашия бизнес - Walkmedia - Свържете се с нас - Движещата се реклама представлява двустранен подвижен билборд, който се носи под формата на раница. Екип от обучени промоутъри разпространява Вашите промо-материали по предварително одобрен от Вас маршрут, комуникира с Вашите потенциални клиенти и със сигурност ангажира вниманието на стотици хора";
     $SeoKeywords = "walkmedia, реклама, ходеща реклама, билборд, ходещ билборд, промоутър, промоция, флаер, human bilboards, walk billboards, walk media, вървяща реклама, светещ билбоард, уникална реклама, рекламна кампания";
-    
+
     include_once("includes/head.php");
     include_once("includes/header.php");
     include_once("includes/functions.php");
@@ -26,7 +26,7 @@
                 $headers .= "Reply-To: ".$_POST['email']." \r\n";
                 $headers .= "Bcc: trayan.ivanov@gmail.com \r\n";
 
-                $to = "trayan.ivanov@gmail.com";
+                $to = "walkmedia1@gmail.com";
                 mail($to, "Запитване от контактна форма", $message, $headers);
 
                 unset($_POST);
@@ -44,6 +44,9 @@
     <div class="col-lg-12">
         <br>
         <p>
+            Телефон за контакти: 0876 818 628<br>
+            Facebook страница: <a href="https://www.facebook.com/walkmedia.bg" target="_blank">Walkmedia.bg</a><br>
+            Е-поща: <a href="mailto:walkmedia1@gmail.com">walkmedia1@gmail.com</a><br><br>
             Ако желаете да се свържете с нас може да използвате и контактната форма.<br>
             Ще отговорим на вашите въпроси по най-бързия възможен начин на посочената електронна поща.
         </p>
